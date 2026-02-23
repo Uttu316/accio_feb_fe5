@@ -1,0 +1,12 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: antiquewhite;
+}
+
+.heading_tite {
+  font-size: 36px;
+  color: teal;
+  margin: 40px;
+}
