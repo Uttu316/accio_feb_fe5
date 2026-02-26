@@ -1,15 +1,23 @@
 import "./resumeList.css";
-const ResumeList = () => {
+const ResumeList = ({ title, list }) => {
   return (
     <div className="resume_list">
-      <h2>Skills</h2>
+      <h2>{title}</h2>
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        {list.map((item) => (
+          <ListItem key={item.id} item={item} />
+        ))}
       </ul>
     </div>
   );
 };
+
+export const ListItem = ({ item }) => {
+  return (
+    <li>
+      <p>{item.label}</p>
+    </li>
+  );
+};
+
 export default ResumeList;

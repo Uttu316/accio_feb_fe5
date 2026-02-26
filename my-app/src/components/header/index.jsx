@@ -9,11 +9,16 @@ const Header = () => {
       </div>
 
       <nav className="resume_links">
-        <a href="#">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Project</a>
+        <HeaderLink link="#" label={"Home"} />
+        <HeaderLink link="#skills" label={"Skills"} />
+        <HeaderLink link="#projects" label={"Projects"} />
       </nav>
     </header>
   );
+};
+
+const HeaderLink = (props) => {
+  const { link, label } = props;
+  return <a href={link}>{label}</a>;
 };
 export default Header;
