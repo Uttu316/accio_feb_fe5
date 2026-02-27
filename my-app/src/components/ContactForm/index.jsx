@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./contactForm.module.css";
 
 const ContactForm = () => {
   const [data, setData] = useState({
@@ -28,8 +29,11 @@ const ContactForm = () => {
     });
   };
   return (
-    <div>
-      <form onSubmit={onSubmit}>
+    <div className={styles.contact_container}>
+      <h2 style={{ marginBottom: "1.5rem", color: "#111827", fontSize: "1.5rem" }}>
+        Contact Us
+      </h2>
+      <form className={styles.contact_form} onSubmit={onSubmit}>
         <InputBox
           value={data.name}
           label={"Name"}
@@ -65,14 +69,25 @@ const ContactForm = () => {
           isText={true}
           onInput={onInput}
         />
-        <button onClick={onSubmit}>Submit</button>
+        <button className={styles.submit_btn} onClick={onSubmit}>
+          Submit Message
+        </button>
       </form>
       {user !== null && (
-        <div>
-          <p> Name:{user.name}</p>
-          <p> Email:{user.email}</p>
-          <p> Phone:{user.phone}</p>
-          <p> Message:{user.message}</p>
+        <div className={styles.user_info}>
+          <h3>Message Sent Successfully!</h3>
+          <p>
+            <strong>Name:</strong> {user.name}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
+          <p>
+            <strong>Phone:</strong> {user.phone}
+          </p>
+          <p>
+            <strong>Message:</strong> {user.message}
+          </p>
         </div>
       )}
     </div>
@@ -89,10 +104,13 @@ const InputBox = ({
   onInput,
 }) => {
   return (
-    <div className="input_box">
-      <label htmlFor={name}>{label}</label>
+    <div className={styles.input_group}>
+      <label className={styles.label} htmlFor={name}>
+        {label}
+      </label>
       {!isText && (
         <input
+          className={styles.input}
           type={type}
           value={value}
           id={name}
@@ -103,6 +121,7 @@ const InputBox = ({
       )}
       {isText && (
         <textarea
+          className={styles.textarea}
           id={name}
           name={name}
           value={value}

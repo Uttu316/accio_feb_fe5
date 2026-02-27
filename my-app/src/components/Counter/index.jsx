@@ -1,44 +1,56 @@
 import { useState } from "react";
+import styles from "./counter.module.css";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
 
-  //   let count = 0; //normal variable
-
-  const onAdd = (e) => {
-    // count += 1;
-    // const el = document.getElementById("countel");
-    // el.innerHTML = count;
+  const onAdd = () => {
     setCount(count + 1);
   };
 
-  const onMinus = (e) => {
-    // count -= 1;
-
-    // const el = document.getElementById("countel");
-    // el.innerHTML = count;
+  const onMinus = () => {
     setCount(count - 1);
   };
 
   const isHigher = count > 10;
-
   const isEven = count % 2 === 0;
-
   const isLower = count < 0;
+
   return (
-    <div>
-      <h2 id="countel">{count}</h2>
+    <div className={styles.counter_card}>
+      <h2 className={styles.count_display}>{count}</h2>
 
-      <button onClick={onAdd}>Add</button>
-      <button onClick={onMinus}>Minus</button>
+      <div className={styles.button_group}>
+        <button className={`${styles.btn} ${styles.btn_add}`} onClick={onAdd}>
+          Add
+        </button>
+        <button
+          className={`${styles.btn} ${styles.btn_minus}`}
+          onClick={onMinus}
+        >
+          Minus
+        </button>
+      </div>
 
-      {isEven && <h3>Number is Even</h3>}
-      {isHigher && <h3>Number is Higher</h3>}
-      {isLower && <h3>Number is Lower</h3>}
+      <div className={styles.status_container}>
+        {isEven && (
+          <div className={`${styles.status_msg} ${styles.even}`}>
+            Even Number
+          </div>
+        )}
+        {isHigher && (
+          <div className={`${styles.status_msg} ${styles.higher}`}>
+            Value is Higher (>10)
+          </div>
+        )}
+        {isLower && (
+          <div className={`${styles.status_msg} ${styles.lower}`}>
+            Value is Lower (<0)
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-//Counter function will be re called by React internally when the state changes
-// this process is knows as re render of component
 export default Counter;

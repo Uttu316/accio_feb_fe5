@@ -1,9 +1,10 @@
-import "./resumeList.css";
+import styles from "./resumeList.module.css";
+
 const ResumeList = ({ title, list }) => {
   return (
-    <div className="resume_list">
-      <h2>{title}</h2>
-      <ul>
+    <div className={styles.resume_container}>
+      <h2 className={styles.title}>{title}</h2>
+      <ul className={styles.list}>
         {list.map((item) => (
           <ListItem key={item.id} item={item} />
         ))}
@@ -14,8 +15,8 @@ const ResumeList = ({ title, list }) => {
 
 export const ListItem = ({ item }) => {
   return (
-    <li>
-      <p>{item.label}</p>
+    <li className={styles.list_item}>
+      <p className={styles.item_label}>{item.label}</p>
     </li>
   );
 };
