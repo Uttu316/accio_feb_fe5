@@ -40,12 +40,12 @@ const Counter = () => {
         )}
         {isHigher && (
           <div className={`${styles.status_msg} ${styles.higher}`}>
-            Value is Higher (>10)
+            Value is Higher
           </div>
         )}
         {isLower && (
           <div className={`${styles.status_msg} ${styles.lower}`}>
-            Value is Lower (<0)
+            Value is Lower
           </div>
         )}
       </div>
