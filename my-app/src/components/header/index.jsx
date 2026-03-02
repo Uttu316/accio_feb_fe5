@@ -1,11 +1,11 @@
 import logo from "../../assets/react.svg";
 import "./header.css";
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <header className="resume_header">
       <div className="resume_title_box">
         <img src={logo} alt="React Logo" />
-        <span className="resume_title">My Portfolio</span>
+        <span className="resume_title">{title || "My Portfolio"}</span>
       </div>
 
       <nav className="resume_links">
