@@ -34,3 +34,6 @@
 .resume_links a:hover {
   color: teal;
 }
+.resume_links a.active {
+  color: teal;
+}

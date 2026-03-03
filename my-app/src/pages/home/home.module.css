@@ -1,0 +1,285 @@
+.homePage {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  gap: 40px;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.ctaButton {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: white;
+  color: #667eea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.heroImage {
+  flex: 1;
+  max-width: 500px;
+}
+
+.heroImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.featuresSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 80px 5%;
+  background-color: #f8f9fa;
+}
+
+.featureCard {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.featureCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.featureCard p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Categories Section */
+.categoriesSection {
+  padding: 80px 5%;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.categoryCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: scale(1.05);
+}
+
+.categoryCard img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.categoryCard h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  margin: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Promotional Banner */
+.promoBanner {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  text-align: center;
+  color: white;
+}
+
+.promoContent h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.promoContent p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.promoButton {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: white;
+  color: #f5576c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.promoButton:hover {
+  transform: scale(1.05);
+}
+
+/* Newsletter Section */
+.newsletterSection {
+  padding: 80px 5%;
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+}
+
+.newsletterSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.newsletterSection p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.newsletterForm {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.subscribeButton {
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeButton:hover {
+  background-color: #5568d3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .featuresSection {
+    grid-template-columns: 1fr;
+    padding: 60px 5%;
+  }
+
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .promoContent h2 {
+    font-size: 2rem;
+  }
+
+  .promoContent p {
+    font-size: 1.2rem;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterSection h2 {
+    font-size: 2rem;
+  }
+}

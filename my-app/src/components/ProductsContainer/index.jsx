@@ -7,6 +7,7 @@ import styles from "./productsContainer.module.css";
 const ProductsContainer = () => {
   const [status, setStatus] = useState("loading");
   const [products, setProducts] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   const getProducts = async () => {
     try {
@@ -43,8 +44,8 @@ const ProductsContainer = () => {
         <div className={styles.noProductsMessage}>Product Not available</div>
       )}
 
-      {hasProducts && <ProductFilters />}
-      {hasProducts && <ProductList products={products} />}
+      {hasProducts && <ProductFilters setFilter={setFilter} filter={filter} />}
+      {hasProducts && <ProductList products={products} filter={filter} />}
     </div>
   );
 };
