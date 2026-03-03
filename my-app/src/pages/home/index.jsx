@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Header from "../../components/header";
 import styles from "./home.module.css";
 
@@ -12,7 +13,9 @@ const Home = () => {
           <p className={styles.heroSubtitle}>
             Discover Amazing Products at Unbeatable Prices
           </p>
-          <button className={styles.ctaButton}>Shop Now</button>
+          <Link to="/store" className={styles.ctaButton}>
+            Shop Now
+          </Link>
         </div>
         <div className={styles.heroImage}>
           <img
